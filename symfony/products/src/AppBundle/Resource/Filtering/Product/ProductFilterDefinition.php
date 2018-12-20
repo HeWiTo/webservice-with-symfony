@@ -27,7 +27,7 @@ class ProductFilterDefinition extends AbstractFilterDefinition implements Filter
 
     public function __construct(
         ?string $title,
-        ?int $brand,
+        ?string $brand,
         ?string $sortByQuery,
         ?array $sortByArray
     )

@@ -57,6 +57,14 @@ class ProductsController extends AbstractController
 
     /**
      * @Rest\View()
+     * @SWG\Get(
+     *     tags={"Product"},
+     *     summary="Gets all product",
+     *     consumes={"application/json"},
+     *     produces={"application/json"},
+     *     @SWG\Response(response="200", description="Returned when successful", @SWG\Schema(type="array", @Model(type=Product::class))),
+     *     @SWG\Response(response="404", description="Returned when product is not found")
+     * )
      */
     public function getProductsAction(Request $request)
     {

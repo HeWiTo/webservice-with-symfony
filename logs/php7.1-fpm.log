@@ -65,3 +65,8 @@
 [20-Dec-2018 13:09:46] NOTICE: fpm is running, pid 1
 [20-Dec-2018 13:09:46] NOTICE: ready to handle connections
 [20-Dec-2018 13:09:46] NOTICE: systemd monitor interval set to 10000ms
+[20-Dec-2018 14:22:50] NOTICE: Terminating ...
+[20-Dec-2018 14:22:50] NOTICE: exiting, bye-bye!
+[20-Dec-2018 16:03:29] NOTICE: fpm is running, pid 1
+[20-Dec-2018 16:03:29] NOTICE: ready to handle connections
+[20-Dec-2018 16:03:29] NOTICE: systemd monitor interval set to 10000ms
