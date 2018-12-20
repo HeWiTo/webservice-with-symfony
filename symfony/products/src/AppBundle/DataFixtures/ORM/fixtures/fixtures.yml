@@ -1,0 +1,30 @@
+AppBundle\Entity\Product:
+    product_{1..100}:
+        title: <firstName()>
+        brand: <lastName()>
+        price: <numberBetween(30, 300)>
+        stock: <numberBetween(1, 20)>
+
+AppBundle\Entity\Category:
+    category_{1..1000}:
+        title: <streetName()>
+        description: <sentence()>
+        createdAt: <dateTimeBetween('2000-01-01', '2018-12-30')>
+
+AppBundle\Entity\Tag:
+    tag_{1..5000}:
+        category: '@category_<numberBetween(1, 1000)>'
+        product: '@product_<numberBetween(1, 100)>'
+        tagName: <firstName()> <lastName()>
+
+AppBundle\Entity\User:
+    user1:
+        username: jurgen_klopp
+        password: Secure123!
+        roles:
+            - 'ROLE_ADMIN'
+    user2:
+        username: pep_guardiola
+        password: ExampleSecure321!
+        roles:
+            - 'ROLE_ADMIN'

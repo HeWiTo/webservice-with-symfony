@@ -1,0 +1,56 @@
+{
+    "name": "hautelook/alice-bundle",
+    "description": "Symfony bundle to manage fixtures with Alice and Faker.",
+    "keywords": ["Symfony", "Fixture", "ORM", "Alice", "Faker"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baldur Rensch",
+            "email": "brensch@gmail.com"
+        },
+        {
+            "name": "Théo FIDRY",
+            "email": "theo.fidry@gmail.com",
+            "homepage": "https://github.com/theofidry"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Hautelook\\AliceBundle\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hautelook\\AliceBundle\\": [
+                "fixtures",
+                "tests"
+            ]
+        }
+    },
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "nelmio/alice": "^3.0-beta3@beta",
+        "symfony/finder": "^2.7||^3.3",
+        "theofidry/alice-data-fixtures": "^1.0-beta5@beta"
+    },
+    "require-dev": {
+        "doctrine/data-fixtures": "^1.2",
+        "doctrine/doctrine-bundle": "^1.6.8",
+        "doctrine/common": "^2.7.2",
+        "doctrine/orm": "^2.5.6",
+        "phpunit/phpunit": "^5.6",
+        "symfony/symfony": "^3.3",
+        "symfony/phpunit-bridge": "^3.1",
+        "phpspec/prophecy": "^1.7"
+    },
+    "suggest": {
+        "theofidry/alice-bundle-extension": "Behat extension for HautelookAliceBundle"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        },
+        "bin-dir": "bin",
+        "sort-packages": true
+    }
+}

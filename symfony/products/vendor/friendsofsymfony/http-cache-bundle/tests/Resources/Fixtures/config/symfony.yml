@@ -1,0 +1,8 @@
+fos_http_cache:
+
+    proxy_client:
+        symfony:
+            http:
+                servers: [22.22.22.22]
+                base_url: /test
+                http_client: acme.guzzle.symfony

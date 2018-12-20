@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="fos_http_cache.cache_manager"
+                 class="FOS\HttpCacheBundle\CacheManager">
+            <argument type="service" id="fos_http_cache.default_proxy_client" />
+            <argument type="service" id="router" />
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service" on-invalid="ignore" />
+            </call>
+            <call method="setGenerateUrlType">
+                <argument>%fos_http_cache.cache_manager.generate_url_type%</argument>
+            </call>
+        </service>
+
+        <service id="fos_http_cache.event_listener.log"
+                 class="FOS\HttpCache\EventListener\LogListener"
+                 abstract="true">
+            <argument type="service" id="logger" />
+        </service>
+
+        <service id="fos_http_cache.command.invalidate_path" class="FOS\HttpCacheBundle\Command\InvalidatePathCommand">
+            <argument type="service" id="fos_http_cache.cache_manager" />
+            <tag name="console.command"/>
+        </service>
+
+        <service id="fos_http_cache.command.invalidate_regex" class="FOS\HttpCacheBundle\Command\InvalidateRegexCommand">
+            <argument type="service" id="fos_http_cache.cache_manager" />
+            <tag name="console.command"/>
+        </service>
+
+        <service id="fos_http_cache.command.refresh_path" class="FOS\HttpCacheBundle\Command\RefreshPathCommand">
+            <argument type="service" id="fos_http_cache.cache_manager" />
+            <tag name="console.command"/>
+        </service>
+    </services>
+
+</container>

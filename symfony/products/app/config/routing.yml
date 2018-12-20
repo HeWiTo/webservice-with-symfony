@@ -1,0 +1,61 @@
+movies:
+    type: rest
+    resource: AppBundle\Controller\ProductsController
+
+products_post:
+    path: /products
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\ProductsController:postProductsAction
+        _format: json
+
+products_patch:
+    path: /products/{product}
+    methods: [PATCH]
+    defaults:
+        _controller: AppBundle\Controller\ProductsController:patchProductAction
+        _format: json
+
+categories:
+    type: rest
+    resource: AppBundle\Controller\CategoriesController
+
+categories_post:
+    path: /categories
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\CategoriesController:postCategoriesAction
+        _format: json
+
+products_tags_post:
+    path: /products/{product}/tags
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\ProductsController:postProductTagsAction
+        _format: json
+
+users:
+    resource: AppBundle\Controller\UsersController
+    type: rest
+
+users_post:
+    path: /users
+    methods: [POST]
+    defaults:
+        _controller: AppBundle\Controller\UsersController:postUserAction
+        _format: json
+
+users_patch:
+    path: /users/{theUser}
+    methods: [PATCH]
+    defaults:
+        _controller: AppBundle\Controller\UsersController:patchUserAction
+        _format: json
+
+tokens:
+    resource: AppBundle\Controller\TokensController
+    type: rest
+
+app.swagger_ui:
+    resource: "@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml"
+    prefix:   /api/doc

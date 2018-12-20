@@ -1,0 +1,9 @@
+composer.lock
+vendor/
+.php_cs.cache
+dist/
+bin/
+!bin/test.sh
+vendor-bin/*/vendor/
+humbuglog.txt
+fixtures/Bridge/Symfony/Application/cache/

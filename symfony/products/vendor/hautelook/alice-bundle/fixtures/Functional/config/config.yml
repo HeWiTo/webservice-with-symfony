@@ -1,0 +1,25 @@
+parameters:
+    test_app.random: 'Random parameter'
+
+framework:
+    secret: test
+    router:
+        resource: ~
+    form:
+        enabled: false
+    validation:
+        enabled: true
+        enable_annotations: true
+    session: ~
+    test: ~
+
+services:
+    data_fixtures.faker.provider.foo:
+        class: Hautelook\AliceBundle\Functional\TestBundle\DataFixtures\Faker\Provider\FooProvider
+        tags: [ { name: nelmio_alice.faker.provider } ]
+
+    app.city_factory:
+        class: Hautelook\AliceBundle\Functional\TestBundle\Entity\CityFactory
+
+    logger:
+        class: Psr\Log\NullLogger
